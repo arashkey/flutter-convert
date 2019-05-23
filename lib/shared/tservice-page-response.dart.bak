@@ -1,0 +1,12 @@
+import 'package:map_to_class_sample/shared/tservice-response.dart';
+
+import 'iservice-responce.dart';
+
+class TServicePageResponse<T extends IServiceResponce>
+    extends TServiceResponse<T> {
+  int pageSize;
+  int totalRecords;
+  int pageNumber;
+
+  TServicePageResponse(Map map) : super(map);
+}
