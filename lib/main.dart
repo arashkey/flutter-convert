@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Convert Map json to Object Class',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(appBar: AppBar(title: Text('Flutter Demo Home Page'))),
+      home: Scaffold(appBar: AppBar(title: Text('Convert Map json to Object Class'))),
     );
   }
 }
