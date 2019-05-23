@@ -19,13 +19,13 @@ class TServiceResponse<T extends IServiceResponce> extends ServiceResponse {
   TServiceResponse( {this.json, this.result})
       : super(json["succeeded"], json["message"]) {}
 
-  T fromJson(Map<String, dynamic> map) {
+  TServiceResponse<T> fromJson(Map<String, dynamic> map) {
     this.result = result.fromJson(map["result"]);
     if (this.result == null) {
       this.listResult = result.fromListJson(map["result"]);
     }
-    return this.listResult;
-  }
+    return this;
+   }
 
   Map<String, dynamic> toJson() => result.toJson();
 }
