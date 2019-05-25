@@ -1,6 +1,5 @@
 import 'package:map_to_class_sample/models/user_address.model.dart';
-import 'package:map_to_class_sample/shared/json-list.dart';
-import 'package:map_to_class_sample/shared/tservice-response.dart';
+import 'package:map_to_class_sample/shared/list-tservice-response.dart';
 
 class UserProfileService {
   String baseUrl;
@@ -9,11 +8,11 @@ class UserProfileService {
     this.baseUrl = '/api/user-profile';
   }
 
-  Future<TServiceResponse<JsonList<UserAddressModel>>>
+  Future<ListTServiceResponse<UserAddressModel>>
       getAllAddressTitleAsync() async {
     String url = this.baseUrl + '/address-title';
     //get data from server like this
-    Map responseBody = {
+    Map<String, dynamic> responseBody = {
       "result": [
         {
           "id": 1,
@@ -33,7 +32,9 @@ class UserProfileService {
       "succeeded": true,
       "message": ""
     };
-    var result =
-        TServiceResponse<JsonList<UserAddressModel>>(json: responseBody);
+    var result = ListTServiceResponse<UserAddressModel>()
+        .fromJson(responseBody, UserAddressModel());
+    print(result);
+    return result;
   }
 }

@@ -1,14 +1,11 @@
-
 import 'package:map_to_class_sample/shared/service-response.dart';
 import 'iservice-responce.dart';
 import 'dart:core';
 
-import 'json-list.dart';
-
 class TServiceResponse<T extends IServiceResponce> extends ServiceResponse {
   T result;
+
   Map<String, dynamic> json;
-  List listResult;
 
 //
 //  TServiceResponse(IServiceResponce<T> res, bool success, String msg)
@@ -16,16 +13,14 @@ class TServiceResponse<T extends IServiceResponce> extends ServiceResponse {
 //    this.result = res;
 //  }
 
-  TServiceResponse( {this.json, this.result})
-      : super(json["succeeded"], json["message"]) {}
+  TServiceResponse(Map<String, dynamic> json, T instance)
+      : super(json["succeeded"], json["message"]) {
+    this.json = json;
+    this.result = instance;
+  }
 
   TServiceResponse<T> fromJson(Map<String, dynamic> map) {
     this.result = result.fromJson(map["result"]);
-    if (this.result == null) {
-      this.listResult = result.fromListJson(map["result"]);
-    }
     return this;
-   }
-
-  Map<String, dynamic> toJson() => result.toJson();
+  }
 }
