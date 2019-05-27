@@ -1,7 +1,5 @@
 class IServiceResponce<T> {
-  static HasNullaryAnonymousConstructor() {
-    return IServiceResponce ();
-  }
+
 
   IServiceResponce();
 

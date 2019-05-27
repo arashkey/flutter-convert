@@ -1,5 +1,4 @@
 import 'package:map_to_class_sample/shared/service-response.dart';
-import 'package:meta/meta.dart';
 import 'iservice-responce.dart';
 import 'dart:core';
 
@@ -7,7 +6,7 @@ import 'dart:core';
 class ListTServiceResponse<T extends IServiceResponce> extends ServiceResponse {
   List<T> listResult = List<T>();
 
-  ListTServiceResponse() : super(false, "") {}
+  ListTServiceResponse() : super(false, "");
 
   fromJson(Map<String, dynamic> json, T instance) {
     this.succeeded=json['succeeded'];
