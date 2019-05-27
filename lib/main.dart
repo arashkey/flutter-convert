@@ -56,6 +56,6 @@ class HomeState extends State<Home> {
 
   void fetchData() async {
     this._data = await (new UserProfileService()).getAllAddressTitleAsync();
-    setState(() async {});
+    setState(()  {});
   }
 }
