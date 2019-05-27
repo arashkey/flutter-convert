@@ -3,7 +3,6 @@ import 'package:meta/meta.dart';
 import 'iservice-responce.dart';
 import 'dart:core';
 
-import 'json-list.dart.bak';
 
 class ListTServiceResponse<T extends IServiceResponce> extends ServiceResponse {
   List<T> listResult = List<T>();
